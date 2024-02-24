@@ -1,0 +1,10 @@
+#!yasl_linux
+2
+<=
+? ("Usage: ./yasl_repeat <start_num> <value1> [ <value2> [ ...]]\n" print -1 exit)
+!
+eval
+#
+1
+-
+#(= 3 !^ #(= print) "\n" print ! 1 +)
