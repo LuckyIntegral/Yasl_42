@@ -1,0 +1,37 @@
+#!yasl_linux
+{
+	3
+	!=
+	? ("error\n" print -1 exit)
+	!
+} args
+
+{
+	[#]
+	1
+	!=
+	? ("error\n" print -1 exit)
+} sep
+
+{
+	%@ (= 1 -
+	1:=:1
+	0:=:1
+	1:==:1
+	1:?:1 ("\n" print 1:! ) : ( 1:print )
+	)
+	"\n" print 
+} split
+
+args
+sep
+# !^
+0:[#]
+0:%@:0 (
+	1
+	-
+	0:%]#[:1
+)
+0:!!
+1:#:2
+2:split:2
