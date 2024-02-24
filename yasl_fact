@@ -1,0 +1,13 @@
+#!yasl_linux
+!!
+
+{
+	[#]
+	%@ (
+		1
+		-
+		%]#[ "0" < ? ("<start_num> must be a strictly positive number\n" print -1 exit)
+		%]#[ "9" > ? ("<start_num> must be a strictly positive number\n" print -1 exit)
+	)
+} check_input
+

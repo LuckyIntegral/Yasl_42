@@ -1,12 +1,25 @@
 #!yasl_linux
+{
+	[#]
+	%@ (
+		1
+		-
+		%]#[ "0" < ? ("<start_num> must be a strictly positive number\n" print -1 exit)
+		%]#[ "9" > ? ("<start_num> must be a strictly positive number\n" print -1 exit)
+	)
+} check_input
+
 2
 <=
 ? ("Usage: ./yasl_repeat <start_num> <value1> [ <value2> [ ...]]\n" print -1 exit)
+!
+0:=:1
+1:check_input:1
+eval
+=
 0
 <=
 ? ("<start_num> must be a strictly positive number\n" print -1 exit)
-!
-eval
 #
 1
 -

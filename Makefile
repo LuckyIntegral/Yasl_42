@@ -5,6 +5,7 @@ EX00		= yasl_hw
 EX01		= yasl_aff_param
 EX02		= yasl_do
 EX03		= yasl_repeat
+EX04		= yasl_fact
 
 begin		:
 	@echo "chmod +x successfully applied"
@@ -36,4 +37,9 @@ ex03		:
 	@chmod +x $(EX03)
 	./$(EX03) 1 "************" "******" "****" "---"
 
-.PHONY		: begin all ex00 ex01 ex02 ex03
+ex04		:
+	@echo "Executing ex04:"
+	@chmod +x $(EX04)
+	./$(EX04) 5
+
+.PHONY		: begin all ex00 ex01 ex02 ex03 ex04
