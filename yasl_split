@@ -14,16 +14,26 @@
 } sep
 
 {
+	# !^
+	[#]
+	0
+	==
+	? ("error\n" print -1 exit)
+	# ^
+} text
+
+{
 	%@ (= 1 -
 	1:=:1
 	0:=:1
 	1:==:1
 	1:?:1 ("\n" print 1:! ) : ( 1:print )
 	)
-	"\n" print 
+	"\n" print
 } split
 
 args
+text
 sep
 # !^
 0:[#]
