@@ -6,6 +6,8 @@ EX01		= yasl_aff_param
 EX02		= yasl_do
 EX03		= yasl_repeat
 EX04		= yasl_fact
+EX05		= yasl_split
+EX06		= yasl_interactive
 
 begin		:
 	@echo "chmod +x successfully applied"
@@ -42,4 +44,14 @@ ex04		:
 	@chmod +x $(EX04)
 	./$(EX04) 5
 
-.PHONY		: begin all ex00 ex01 ex02 ex03 ex04
+ex05		:
+	@echo "Executing ex05:"
+	@chmod +x $(EX05)
+	./$(EX05) "a" "aHelloaWorlda"
+
+ex06		:
+	@echo "Executing ex06:"
+	@chmod +x $(EX06)
+	./$(EX06)
+
+.PHONY		: begin all ex00 ex01 ex02 ex03 ex04 ex05 ex06
