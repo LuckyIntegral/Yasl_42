@@ -1,5 +1,16 @@
 #!yasl_linux
 !!
+{
+	= 1 == ? (
+		1
+	) : (
+		=
+		1
+		-
+		fact
+		*
+	)
+} fact
 
 {
 	[#]
@@ -11,3 +22,14 @@
 	)
 } check_input
 
+# 1 != ? ("Usage: ./yasl_fact <num>\n" print -1 exit)
+
+0:=:1
+1:check_input:1
+
+eval
+= 0 == ? (1 print "\n" print 0 exit)
+= 20 > ? ("Number overflow encountered\n" print 1 exit)
+1 +
+fact print
+"\n" print
