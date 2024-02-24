@@ -2,6 +2,9 @@
 2
 <=
 ? ("Usage: ./yasl_repeat <start_num> <value1> [ <value2> [ ...]]\n" print -1 exit)
+0
+<=
+? ("<start_num> must be a strictly positive number\n" print -1 exit)
 !
 eval
 #
