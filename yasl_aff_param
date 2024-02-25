@@ -1,7 +1,7 @@
 #!yasl_linux
-1                     // like condition to which we make an assertion
-==                    // operatot that we use to compare the two values
-? (-1 exit) :         // if the condition is true, then we exit the program
-!                     // drop the value from the stack, usually here we drop name of script
-#                     // specify how many values we want to print (all of them)
-#(print "\n" print)   // function that is applied to ech value (print itself, add new line and print it again)
+1
+==
+? ("Usage: ./yasl_aff_param\n" print -1 exit)
+!
+#
+#(print "\n" print)

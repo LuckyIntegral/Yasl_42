@@ -47,7 +47,7 @@ ex04		:
 ex05		:
 	@echo "Executing ex05:"
 	@chmod +x $(EX05)
-	./$(EX05) "a" "aHelloaWorlda"
+	./$(EX05)  " " " Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
 
 ex06		:
 	@echo "Executing ex06:"

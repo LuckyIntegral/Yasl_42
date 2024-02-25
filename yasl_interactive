@@ -3,10 +3,6 @@
 
 # 0 != ? ("Usage: ./yasl_interactive\n" print -1 exit)
 
-read
-0 != @(
-	eval
-	read
-)
+read @( eval read )
 
-"Finish\n" print
+"exit\n" print
