@@ -1,0 +1,8 @@
+#!yasl_linux
+!!
+
+# 0 != ? ("Usage: cat image | ./diplay_b64\n" print -1 exit)
+
+read
+0:[#]:1
+print "\n" print

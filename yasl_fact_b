@@ -1,0 +1,23 @@
+#!yasl_linux
+{
+	=
+	1
+	-
+	=
+	0
+	!=
+	? fact
+	1 +
+} fact
+
+2
+!=
+? ("error\n" print 42 exit)
+!
+eval
+fact
+1 -
+%@ ( 1 - # !^ * # ^)
+!
+#
+#(print "\n" print)

@@ -1,0 +1,74 @@
+#!yasl_linux
+{
+	3
+	!=
+	? ("2 arguments required\n" print -1 exit)
+	!
+} args
+
+{
+	[#]
+	1
+	!=
+	? ("Error! First string has to be size 1\n" print -1 exit)
+} sep
+
+{
+	# !^
+	[#]
+	0
+	==
+	? ("Error! Second string has to be size 1 or bigger\n" print -1 exit)
+	# ^
+} text
+
+{
+	1
+	-
+	=
+	0
+	==
+	? ("\n" print 0 exit)
+} count_end
+
+{
+	1:=:1
+	0:=:1
+	1:==:1
+	1:@:1
+	(
+		2:count_end:2
+		1:!
+		1:=:1
+		0:=:1
+		1:==:1
+	)
+} del_spaces
+
+{
+	del_spaces
+	1:#:2
+	2:=:2
+	%@ (
+	1:=:1
+	0:=:1
+	1:!=:1
+	1:?:1 ( 1:print ) : (del_spaces "\n" print )
+	1:#:2
+	)
+	"\n" print
+} split
+
+args
+text
+sep
+# !^
+0:[#]
+0:%@:0 (
+	1
+	-
+	0:%]#[:1
+)
+0:!!
+1:#:2
+2:split:2
