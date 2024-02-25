@@ -26,7 +26,8 @@
 } block_check
 
 {
-	"\\e[38;2;200;0;0m " print
+	"\e[48;5;15m " print
+	"\e[0m" print
 } print_block
 
 {
