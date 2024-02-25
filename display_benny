@@ -127,7 +127,7 @@
 
 {
 	(5:=:0 "\e[48;2;" print
-	= 256 / 256 /
+	= 65536 /
 	print ";" print
 	= 256 / 256 %
 	print ";" print
@@ -150,10 +150,21 @@
 } print_all
 
 {
-	9999999999
+	7:=:0
+	-
+	=
+	*
+	0:=:6
+	7:!
+	!
+} calc_square_val_dist
+
+{
+	999999999999999999
 	0:=:9 !
-	-1
+	-10
 	0:=:8 !
+
 	256
 	%@ (
 		1 -
@@ -161,11 +172,23 @@
 		= 36 % 6 / 51 * 0:=:7 !		// g
 		= 36 / 51 * 0:=:7 !			// r
 		5:=:0
-		=
-
+		65536 /
+		calc_square_val_dist
+		5:=:0
+		= 256 / 256 %
+		calc_square_val_dist
+		6:+:6
+		5:=:0
+		65536 %
+		calc_square_val_dist
+		!
+		6:+:6
+		6:=:0
+		9:=:0
+		<
+		? ( 9:! 6:=:9 6:! 8:! 0:=:8 )
 	)
-	7:#:7
-	7:print " " print
+	//  distance=( (r - palette_r)**2 + (g - palette_g)**2 + (b - palette_b)**2 )
 } calc_closest_color
 
 !!
@@ -183,12 +206,12 @@ square_root
 prep_nbrs
 move_nbrs
 image_size
-print_all
+calc_closest_color
 
 0 exit
+print_all
 error_input
 
-calc_closest_color
 
 
 
