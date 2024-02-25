@@ -1,8 +1,45 @@
 #!yasl_linux
+
+{
+	= 4 %
+	0 != ? ("Error: input file has wrong size\n" print -1 exit)
+} error_input
+
+{
+	= 4 /
+	= "Image received, nb pixels : " print print "\n" print
+} image_size
+
+{
+	0
+	1
+	@ (
+		1 +
+		=
+		=
+		*
+		=
+		# ^ = # !^
+		1:print " " print
+		-1 exit
+	)
+} block_check
+
+{
+	"\\e[38;2;200;0;0m " print
+} print_block
+
+{
+	32
+	%@ ( 1 - print_block )
+	"\n" print
+} print_row
+
 !!
-
-# 0 != ? ("Usage: cat image | ./diplay_b64\n" print -1 exit)
-
+# 0 != ? ("Error! Usage: cat image | ./diplay_b64\n" print -1 exit)
 read
-0:[#]:1
-print "\n" print
+error_input
+image_size
+print_block
+0:=:1
+1:block_check:1
